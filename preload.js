@@ -39,12 +39,6 @@ function post(api_url, send) {
 }
 
 // let tags = [
-//     "learn/windows",
-//     "learn/windows/ahk",
-//     "learn/wsl",
-//     "learn/wsl/arch",
-//     "learn/rust",
-//     "learn/rust/类型",
 //     "learn/vim",
 //     "learn/英语",
 //     "log/下班",
@@ -199,7 +193,8 @@ function is_start_by_tag(str) {
 
 /**
  * 本地存储
- * @param {string} memo 
+ * @param {string} memo
+ * @param suffix
  * @returns boolean
  */
 function put_local_memo(memo, suffix) {
@@ -252,10 +247,6 @@ function check_api(as_check = false) {
         if (api_url === "" || api_url === undefined || api_url === null) {
             utools.showNotification('尚未配置flomo用户api url,请点击进行配置!', 'uflomo_config_api');
             window.utools.outPlugin();
-
-            // utools.setSubInput(({ text }) => {
-            //     console.log(text);
-            // }, "uflomo:配置api");
 
             return true;
         }

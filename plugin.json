@@ -1,12 +1,10 @@
 {
     "logo": "icons/logo.png",
-    "platform": ["win32"],
     "preload": "preload.js",
     "features": [{
         "code": "uflomo_add_width_tag",
         "explain": "uflomo: 新的memo",
         "icon": "icons/logo.png",
-        "platform": ["win32"],
         "cmds": [
             "memo",
             "uflomo:memo",
@@ -21,7 +19,6 @@
         "code": "uflomo_custom_local_tag",
         "explain": "uflomo: 管理本地标签",
         "icon": "icons/logo.png",
-        "platform": ["win32"],
         "cmds": [
             "uflomo:管理本地标签",
             "uflomo:grlibfdibnqm",
@@ -31,7 +28,6 @@
         "code": "uflomo_sort_local_tag",
         "explain": "uflomo: 排序本地标签",
         "icon": "icons/logo.png",
-        "platform": ["win32"],
         "cmds": [
             "uflomo:排序本地标签",
             "uflomo:bfdibnqmpdxu",
@@ -41,7 +37,6 @@
         "code": "uflomo_config_api",
         "explain": "uflomo: 配置api",
         "icon": "icons/logo.png",
-        "platform": ["win32"],
         "cmds": [
             "uflomo:配置api",
             {
