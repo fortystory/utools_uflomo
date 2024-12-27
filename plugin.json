@@ -17,7 +17,7 @@
         ]
     }, {
         "code": "uflomo_custom_tag",
-        "explain": "uflomo: 管理本地标签",
+        "explain": "uflomo: 管理标签",
         "icon": "icons/logo.png",
         "cmds": [
             "uflomo:管理标签",

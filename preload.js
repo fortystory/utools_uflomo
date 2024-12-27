@@ -266,11 +266,11 @@ function set_api_url(api_url_str) {
         utools.dbStorage.setItem("uflomo_api_url", api_url_str);
         api_url = api_url_str;
         utools.showNotification('flomo api url配置成功!');
-        window.utools.outPlugin();
     } else {
         utools.showNotification('输入的api url为: ' + api_url_str);
         utools.showNotification('flomo api url配置失败!请检查api url是否正确');
     }
+    window.utools.outPlugin();
 }
 
 let is_first = true; //标记只有第一次进入起效,替换子输入框文字
@@ -449,7 +449,7 @@ window.exports = {
                     callbackSetList(search_list);
                 }
             },
-            placeholder: "管理本地标签"
+            placeholder: "管理标签"
         }
     },
     "uflomo_open_local_dir": {
