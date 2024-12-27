@@ -118,9 +118,11 @@ function send_memo(content) {
     let strs = new Array(); //定义一数组
     strs = content.split(" "); //字符分割
     if (strs.length >= 1) {
-        if (is_start_by_tag(strs[0])) {
-            //更新标签数据
-            add_tag(strs[0]);
+        for (const str of strs) {
+            if (is_start_by_tag(str)) {
+                //更新标签数据
+                add_tag(str);
+            }
         }
     }
     //调用发送接口
@@ -168,12 +170,12 @@ function edit_tag(old_tag_text, new_tag_text) {
             tag_idx = idx;
         }
         if (tag == new_tag_text) {
-            utools.showNotification('编辑后的标签已经存在,请重新进行编辑!', 'uflomo_custom_local_tag');
+            utools.showNotification('编辑后的标签已经存在,请重新进行编辑!', 'uflomo_custom_tag');
             window.utools.outPlugin();
         }
     });
     if (tag_idx == -1) {
-        utools.showNotification('标签不存在!', 'uflomo_custom_local_tag');
+        utools.showNotification('标签不存在!', 'uflomo_custom_tag');
         window.utools.outPlugin();
     }
     tags[tag_idx] = new_tag_text;
@@ -215,7 +217,7 @@ function put_local_memo(memo, suffix) {
         seq = '\\';
     }
     //创建flomo memo目录
-    let file_path = doc_path + seq + "uflomo_memo" + seq + year + seq + add_0(month);
+    let file_path = doc_path + seq + "uflomo" + seq + year + seq + add_0(month);
     if (!fs.existsSync(file_path)) {
         fs.mkdirSync(file_path, { recursive: true });
     }
@@ -326,10 +328,10 @@ window.exports = {
                 }
             },
             // 子输入框为空时的占位符，默认为字符串"搜索"
-            placeholder: "选择,输入标签新标签,或直接输入内容"
+            placeholder: "选择标签,输入新标签或直接输入内容"
         }
     },
-    "uflomo_custom_local_tag": {
+    "uflomo_custom_tag": {
         mode: "list",
         args: {
             enter: (action, callbackSetList) => {
@@ -448,6 +450,27 @@ window.exports = {
                 }
             },
             placeholder: "管理本地标签"
+        }
+    },
+    "uflomo_open_local_dir": {
+        mode: "none", // 无UI模式
+        args: {
+            enter: () => {
+
+                //获取本地用户目录
+                let doc_path = utools.getPath('documents');
+
+                let seq = '/';
+                if (utools.isWindows()) {
+                    seq = '\\';
+                }
+                //创建flomo memo目录
+                let file_path = doc_path + seq + "uflomo";
+
+                utools.shellOpenPath(file_path);
+                window.utools.outPlugin();
+            },
+            placeholder: "打开本地文件目录"
         }
     },
     "uflomo_config_api": {

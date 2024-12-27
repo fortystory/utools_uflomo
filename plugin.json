@@ -16,22 +16,22 @@
             }
         ]
     }, {
-        "code": "uflomo_custom_local_tag",
+        "code": "uflomo_custom_tag",
         "explain": "uflomo: 管理本地标签",
         "icon": "icons/logo.png",
         "cmds": [
-            "uflomo:管理本地标签",
-            "uflomo:grlibfdibnqm",
-            "uflomo:custom_local_tag"
+            "uflomo:管理标签",
+            "uflomo:grlibnqm",
+            "uflomo:custom_tag"
         ]
     }, {
-        "code": "uflomo_sort_local_tag",
-        "explain": "uflomo: 排序本地标签",
+        "code": "uflomo_open_local_dir",
+        "explain": "uflomo: 打开本地文件目录",
         "icon": "icons/logo.png",
         "cmds": [
-            "uflomo:排序本地标签",
-            "uflomo:bfdibnqmpdxu",
-            "uflomo:sort_local_tag"
+            "uflomo:打开本地文件目录",
+            "uflomo:dakdbfdiwfjmmulu",
+            "uflomo:open_local_dir"
         ]
     }, {
         "code": "uflomo_config_api",
