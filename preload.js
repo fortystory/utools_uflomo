@@ -261,7 +261,7 @@ function set_api_url(api_url_str) {
     //配置api
     //校验是否是flomo的api url
     api_url_str = api_url_str.trim();
-    let reg = /^https:\/\/flomoapp\.com\/[\w/ ]+$/;
+    let reg = /^https:\/\/((flomoapp\.com)|(api\.catnote\.cn))\/[\w/ ]+$/;
     if (reg.test(api_url_str)) {
         utools.dbStorage.setItem("uflomo_api_url", api_url_str);
         api_url = api_url_str;
@@ -282,7 +282,7 @@ window.exports = {
             enter: (action, callbackSetList) => {
                 check_api(false);
                 let search_list = [];
-                if (action.type == 'regex' && is_first) {
+                if ((action.type == 'regex' || action.type == 'over') && is_first) {
                     let searchWord = action.payload;
                     let _tags = get_next(searchWord);
                     search_list = get_next_uflomo_add_width_tag_list(_tags, searchWord);
@@ -290,7 +290,7 @@ window.exports = {
                     setTimeout(() => {
                         utools.setSubInputValue(action.payload + " ");
                     }, 10);
-                    is_first = false;
+                    // is_first = false;
                 } else {
                     tags.map((tag) => {
                         search_list.push({

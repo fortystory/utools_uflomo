@@ -13,6 +13,11 @@
                 "label": "uflomo:memo",
                 "match": "/^#\\S+/",
                 "minLength": 2
+            },
+            {
+                "type": "over",
+                "label": "uflomo:memo",
+                "minLength": 2
             }
         ]
     }, {
@@ -41,9 +46,15 @@
             "uflomo:配置api",
             {
                 "type": "regex",
-                "label": "uflomo:配置api",
-                "match": "/^https:\\/\\/flomoapp\\.com\\/[\\w/]+$/",
-                "minLength": 60
+                "label": "uflomo:配置catnote api",
+                "match": "/^https:\\/\\/api\\.catnote\\.cn\/[\\w/ ]+$/",
+                "minLength": 30
+            },
+            {
+                "type": "regex",
+                "label": "uflomo:配置flomo api",
+                "match": "/^https:\\/\\/flomoapp\\.com\\/[\\w/ ]+$/",
+                "minLength": 30
             }
         ]
     }],
